@@ -1,0 +1,323 @@
+{
+    "MINP_256_MinMax":
+    {
+        "label": "PixelIntNorm(MinMax); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+
+        ]
+    },
+
+    "MINP_512_MinMax":
+    {
+        "label": "PixelIntNorm(MinMax); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_256_P1P99":
+    {
+        "label": "PixelIntNorm(P1P99); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_512_P1P99":
+    {
+        "label": "PixelIntNorm(P1P99); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_256_ZScore":
+    {
+        "label": "PixelIntNorm(ZScore); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_512_ZScore":
+    {
+        "label": "PixelIntNorm(ZScore); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_256_HistNorm":
+    {
+        "label": "PixelIntNorm(HistNorm); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MINP_512_HistNorm":
+    {
+        "label": "PixelIntNorm(HistNorm); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Orientation_MinMax":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(MinMax); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Orientation_MinMax":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(MinMax); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Orientation_P1P99":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(P1P99); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Orientation_P1P99":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(P1P99); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Orientation_ZScore":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(ZScore); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Orientation_ZScore":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(ZScore); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Orientation_HistNorm":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(HistNorm); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Orientation_HistNorm":
+    {
+        "label": "Orientation(RAS); PixelIntNorm(HistNorm); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Spacing_MinMax":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(MinMax); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Spacing_MinMax":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(MinMax); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Spacing_P1P99":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(P1P99); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Spacing_P1P99":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(P1P99); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Spacing_ZScore":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(ZScore); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Spacing_ZScore":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(ZScore); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_Spacing_HistNorm":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(HistNorm); Resize(256, 256, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_Spacing_HistNorm":
+    {
+        "label": "PixelSpac(Median); PixelIntNorm(HistNorm); Resize(512, 512, 64)",
+        "transforms":[
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+
+    "MIP_256_All_MinMax":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(MinMax); Resize(256, 256)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_All_MinMax":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(MinMax); Resize(512, 512)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRanged", "params":{"keys":["image"], "a_min":0, "a_max":1}, "note": "MinMax"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_All_P1P99":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(P1P99); Resize(256, 256)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_All_P1P99":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(P1P99); Resize(512, 512)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "ScaleIntensityRangePercentilesd", "params":{"keys":["image"], "lower":1, "upper":99, "b_min":0, "b_max":1}, "note": "p1p99"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_All_ZScore":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(ZScore); Resize(256, 256)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_All_ZScore":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(ZScore); Resize(512, 512)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "NormalizeIntensityd", "params":{"keys":["image"], "nonzero":"True"}, "note":"ZScore"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_256_All_HistNorm":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(HistNorm); Resize(256, 256)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[256, 256, 64], "mode":"nearest"}}
+        ]
+    },
+
+    "MIP_512_All_HistNorm":
+    {
+        "label": "Orientation(RAS); PixelSpac(Median); PixelIntNorm(HistNorm); Resize(512, 512)",
+        "transforms":[
+            {"name": "Orientationd", "params": {"keys":["image", "segmentation"], "axcodes":"RAS"}},
+            {"name": "Spacingd", "params": {"keys":["image", "segmentation"], "pixdim": [0.7031000256538391, 0.7031000256538391, 1.0000005960464478], "mode":"nearest"}},
+            {"name": "HistogramNormalized", "params":{"keys":["image"],"num_bins":700, "min":0, "max":21033}, "note": "HistNorm"},
+            {"name": "Resized", "params":{"keys":["image", "segmentation"], "spatial_size":[512, 512, 64], "mode":"nearest"}}
+        ]
+    }
+}
