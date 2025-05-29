@@ -15,7 +15,7 @@ We focus on evaluating the impact of different preprocessing strategies for brea
 - Easily configurable preprocessing pipelines via JSON
 - Automatic GPU scheduling via `cuda.json`
 - Support for image–segmentation pair CSVs
-- **Dockerfile included for full reproducibility**
+- **Dockerfile included for reproducibility**
 
 ## 📁 Dataset Preparation
 
@@ -27,4 +27,29 @@ https://www.cancerimagingarchive.net/
 Also available on TCIA:  
 https://www.cancerimagingarchive.net/
 
-Prepare a CSV file with the format:
+Take advantage of using the "metadata.csv" provided from each dataset to make pairs of path image-segmentation to give to the model. 
+
+## 🐳 Docker Configuration (Recommended)
+### Step 1: Build Docker Image
+docker build -t breast-imaging-pipeline .
+
+### Step 2: Run Container
+docker run --gpus all -v /path/to/data:/data breast-imaging-pipeline \
+    python main.py --config config_unet_cbisd.json
+
+### Step 3: Configure GPU Availability
+Edit cuda.json to specify which GPUs are currently available. 
+
+Example:
+{
+  "available_gpus": [0, 2, 3]
+}
+
+### Step 4: Run
+python main.py --config config_unet_cbisd.json
+**or**
+python main.py --config config_unet_dukemri.json
+
+## 🤝 Acknowledgements
+- MONAI by Project MONAI
+- Datasets from TCIA
