@@ -1,7 +1,7 @@
 # Breast Imaging Preprocessing & UNet Training Pipelines
 
 This repository contains the code accompanying the paper:  
-**"[Title of Your Paper]"**  
+**"The Impact of Pre-processing Techniques on Deep Learning Medical Image Segmentation"**  
 Submitted to [Conference/Journal Name], 2025.
 
 We focus on evaluating the impact of different preprocessing strategies for breast imaging using two datasets:  
