@@ -5,8 +5,8 @@ This repository contains the code accompanying the paper:
 Submitted to [Conference/Journal Name], 2025.
 
 We focus on evaluating the impact of different preprocessing strategies for breast imaging using two datasets:  
-- **CBIS-DDSM (2D mammography)** (https://www.cancerimagingarchive.net/collection/cbis-ddsm/)
-- **Duke Breast Cancer MRI (3D MRI)** (https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)
+- **CBIS-DDSM (2D mammography)**: Available under the Creative Commons Attribution 3.0 (CC BY 3.0) license in TCIA - (https://www.cancerimagingarchive.net/collection/cbis-ddsm/)
+- **Duke Breast Cancer MRI (3D MRI)**: Licensed under the Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0) in TCIA -  (https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)
 
 ## 🧠 Key Features
 
