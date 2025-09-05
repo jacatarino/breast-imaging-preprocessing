@@ -21,11 +21,11 @@ We focus on evaluating the impact of different preprocessing strategies for brea
 
 ### 1. CBIS-DDSM
 Download from The Cancer Imaging Archive (TCIA):  
-[https://www.cancerimagingarchive.net/](https://www.cancerimagingarchive.net/collection/cbis-ddsm/)
+[https://www.cancerimagingarchive.net/collection/cbis-ddsm/](https://www.cancerimagingarchive.net/collection/cbis-ddsm/)
 
 ### 2. Duke Breast MRI
 Also available on TCIA:  
-[https://www.cancerimagingarchive.net/](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)
+[https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/](https://www.cancerimagingarchive.net/collection/duke-breast-cancer-mri/)
 
 Take advantage of using the "metadata.csv" provided from each dataset to make pairs of path image-segmentation to give to the model. 
 
